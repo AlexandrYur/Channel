@@ -1,0 +1,39 @@
+{% extends 'layouts.app.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Subscribe on channels</div>
+
+                    <div class="panel-body">
+                        <form method="post" action="/do/subscribe">
+                            <div class="form-group">
+
+                                {% for channel in channels %}
+                                    <div class="row ">
+                                        <label class="col-xs-10">
+                                            <input type="checkbox" name="channel_id[]" id="channel_{{ channel.id }}"
+                                                   value="{{ channel.id }}"
+                                            {% if auth_user().id in channel.users.pluck('id') %}checked{% endif %}
+                                            > {{ channel.name }}
+                                        </label>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </div>
+
+                            {% include 'layouts.errors' %}
+                            {{ csrf_field() }}
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

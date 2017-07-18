@@ -1,0 +1,34 @@
+{% extends 'layouts.app.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Create the new channel.</div>
+
+                    <div class="panel-body">
+                        <form method="post" action="/channels">
+
+                            <div class="form-group">
+                                <label for="newChannelName">
+                                    New channel name
+                                </label>
+                                <input class="form-control" id="newChannelName" placeholder="Channel Name" name="name">
+                            </div>
+                            {{ csrf_field() }}
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Create</button>
+                                <a href="/channels" class="btn btn-info">Go to channels list</a>
+                            </div>
+
+                            {% include 'layouts.errors' %}
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

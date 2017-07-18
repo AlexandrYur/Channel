@@ -1,0 +1,33 @@
+{
+    "name": "AlexandrYur/channel",
+    "description": "Adds the power of Channel Subscription to Laravel",
+    "keywords": ["VAS", "Channel", "subscription"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexandr Yurchenko",
+            "email": "alexandr.yourchenko@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "5.3.*",
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+        "rcrowe/twigbridge": "dev"
+    },
+    "require-dev": {
+        "laravel/framework": "5.4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TwigBridge\\": "src",
+            "TwigBridge\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.10-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}

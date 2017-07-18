@@ -1,0 +1,28 @@
+{% extends 'layouts.app.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Channels list</div>
+
+                    <div class="panel-body">
+                        <ul>
+                            {% for channel in channels %}
+                                <div class="row">
+                                    {{ channel.id }}. <a href="/channels/{{ channel.id }}" class="btn btn-link">{{ channel.name }}</a>
+                                    [ <a href="destroy/channels/{{ channel.id }}" class="btn btn-link btn-xs"> X </a> ]
+                                </div>
+                            {% endfor %}
+                            <div class="row">
+                                +. <a href="/create/channels/" class="btn btn-link">Create a new one</a>
+                            </div>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
