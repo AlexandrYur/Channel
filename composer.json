@@ -1,5 +1,5 @@
 {
-    "name": "AlexandrYur/Channel",
+    "name": "alexandryur/channel",
     "description": "Adds the power of Channel Subscription to Laravel",
     "keywords": ["VAS", "Channel", "subscription"],
     "license": "MIT",
