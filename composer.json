@@ -29,5 +29,5 @@
             "dev-master": "0.10-dev"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
